@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar'
 import { SafeAreaView } from 'react-native'
 import { UserNameProvider } from './src/contexts/userName'
 import tw from './src/library/tailwind'
-import { HomeScreen } from './src/screens'
+import { HomeScreen, LoginScreen, RegistrationScreen } from './src/screens'
 import { Android } from './src/utils/platform'
 
 const Stack = createNativeStackNavigator()
@@ -21,7 +21,9 @@ export default function App() {
                             headerShown: false,
                         }}>
                         {/************** screen **************/}
+                        <Stack.Screen name="login" component={LoginScreen} />
                         <Stack.Screen name="home" component={HomeScreen} />
+                        <Stack.Screen name="registration" component={RegistrationScreen} />
                         {/*************** end ***************/}
                     </Stack.Navigator>
                 </NavigationContainer>

@@ -6,8 +6,8 @@ module.exports = {
     theme: {
         colors: {
             deep_primary: '#0C579D',
-            primary: '#457dc3',
-            secondary: '#419cd9',
+            primary: '#076B62',
+            secondary: '#009D8F',
             blue1: '#535994',
             blue2: '#5f74ad',
             blue3: '#457dc3',
@@ -16,9 +16,9 @@ module.exports = {
             light_blue: '#eff6ff',
             dark: '#333',
             dark_blue: '#23395d',
-            dark_grey: '#555',
-            grey: '#7987a1',
-            light_grey: '#aebacf',
+            dark_gray: '#555',
+            gray: '#808D9E',
+            light_gray: '#aebacf',
             silver: '#E9ECF2',
             dark_light: '#dee2e9',
             light: '#f0f0f0',
