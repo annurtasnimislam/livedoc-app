@@ -1,50 +1,59 @@
-import { FontAwesome5, MaterialCommunityIcons, Feather, MaterialIcons } from '@expo/vector-icons'
+import { FontAwesome5, MaterialCommunityIcons, Feather } from '@expo/vector-icons'
 import { Picker } from '@react-native-picker/picker'
+import { useNavigation } from '@react-navigation/native'
+import { useState } from 'react'
 import { View, Text } from 'react-native'
 import tw from '../../library/tailwind'
-import { InputIcon, OuterHeader, Wrapper } from '../Resource'
+import { InputIcon, InputIcons, LargeButton, OuterHeader, Wrapper } from '../Resource'
 
 export default function Registration() {
+    const [gender, setGender] = useState()
+
+    const navigation = useNavigation()
+
     return (
-        <Wrapper>
+        <Wrapper mb="20">
             <OuterHeader
                 title="Join us to start searching"
                 subTitle="You can search c ourse, apply course and find scholarship for abroad studies"
             />
-            <InputIcon>
+            <InputIcon placeholder="Enter Name">
                 <FontAwesome5 name="user" size={18} color="#808D9E" />
             </InputIcon>
-            <InputIcon>
+            <InputIcon placeholder="Enter Email">
                 <MaterialCommunityIcons name="email-outline" size={20} color="#808D9E" />
             </InputIcon>
-            <InputIcon>
-                {/* <Ionicons name="call-outline" size={20} color="#808D9E" /> */}
-                <Feather name="phone-call" size={18} color="#808D9E" />
+            <InputIcon placeholder="Enter Phone">
+                <Feather name="phone-call" size={17} color="#808D9E" />
             </InputIcon>
+
+            {/* picker */}
             <View style={tw`${styles.container}`}>
-                <View style={tw`${styles.label}`}>
-                    <MaterialCommunityIcons name="all-inclusive-box-outline" size={20} color="#808D9E" />
-                    <Text style={tw`${styles.gender}`}>Gender</Text>
-                </View>
-                <Picker
-                    style={tw`${styles.picker}`}
-                    // onValueChange={(e) => props.setSex(e)}
-                    // selectedValue={props.sex}
-                    // required
-                >
-                    <Picker.Item style={tw`text-secondary text-[13px]`} label="Select" value="" />
-                    <Picker.Item label="Male" value="male" />
-                    <Picker.Item label="Female" value="female" />
-                    <Picker.Item label="Others" value="others" />
+                <Text style={tw`${styles.gender}`}>Gender</Text>
+                <Picker style={tw`w-[43%]`} onValueChange={(e) => setGender(e)} selectedValue={gender} required>
+                    <Picker.Item style={tw`${styles.label}`} label="Select" value="" />
+                    <Picker.Item style={tw`text-[13px]`} label="Male" value="male" />
+                    <Picker.Item style={tw`text-[13px]`} label="Female" value="female" />
+                    <Picker.Item style={tw`text-[13px]`} label="Others" value="others" />
                 </Picker>
             </View>
+            {/* picker */}
+            <InputIcons placeholder="Enter password" />
+            <InputIcons placeholder="Confirm password" />
+            <LargeButton text="Sign Up" mt="8" />
+            <Text style={tw`${styles.account}`}>
+                Have an account?{' '}
+                <Text style={tw`text-primary`} onPress={() => navigation.navigate('login')}>
+                    Sign In
+                </Text>
+            </Text>
         </Wrapper>
     )
 }
 
 const styles = {
-    container: 'flex-row justify-between items-center',
-    label: 'flex-row gap-2',
-    gender: 'text-dark_gray',
-    picker: 'w-[40%]',
+    container: 'h-11.5 flex-row justify-between items-center border border-light rounded-2 my-3.5 ',
+    gender: 'pl-6 text-dark_gray text-[15px]',
+    label: 'text-secondary text-[13px]',
+    account: 'text-dark_gray mt-2 text-center',
 }

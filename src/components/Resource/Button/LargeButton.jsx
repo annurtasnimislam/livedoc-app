@@ -1,11 +1,11 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import tw from '../../../library/tailwind'
 
-export default function LargeButton() {
+export default function LargeButton({ text, mt }) {
     return (
-        <View style={tw`${styles.flex}`}>
+        <View style={tw`${styles.flex} mt-${mt}`}>
             <TouchableOpacity style={tw`${styles.container}`}>
-                <Text style={tw`${styles.text}`}>Sign In</Text>
+                <Text style={tw`${styles.text}`}>{text}</Text>
             </TouchableOpacity>
         </View>
     )

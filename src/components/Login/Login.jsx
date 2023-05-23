@@ -11,15 +11,17 @@ export default function Login() {
     const navigation = useNavigation()
 
     return (
-        <Wrapper>
+        <Wrapper mb="20">
             <OuterHeader
+                mt="8"
                 title="Welcome back"
-                subTitle="You can search c ourse, apply course and find scholarship for abroad studies"
+                subTitle="You can search course, apply course and find scholarship for abroad studies"
             />
             <InputIcon placeholder="Enter email or phone">
                 <MaterialCommunityIcons name="email-outline" size={20} color="#808D9E" />
             </InputIcon>
             <InputIcons placeholder="Enter Password" />
+            {/* remember & forget */}
             <View style={tw`${styles.container}`}>
                 <View style={tw`${styles.checkbox}`}>
                     <Checkbox value={checked} onValueChange={setChecked} />
@@ -27,7 +29,9 @@ export default function Login() {
                 </View>
                 <Text style={tw`${styles.forgot}`}>Forgot Passowrd</Text>
             </View>
-            <LargeButton />
+            {/* remember & forget */}
+            <LargeButton text="Sign In" mt="16" />
+
             <Text style={tw`${styles.account}`}>
                 don’t Have an account?{' '}
                 <Text style={tw`text-primary`} onPress={() => navigation.navigate('registration')}>
@@ -39,7 +43,7 @@ export default function Login() {
 }
 
 const styles = {
-    container: 'flex-row justify-between items-center mb-[20%]',
+    container: 'flex-row justify-between items-center',
     checkbox: 'flex-row gap-2 items-center',
     remember: 'text-dark_gray',
     forgot: 'text-primary font-500',
