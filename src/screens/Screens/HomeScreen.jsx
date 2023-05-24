@@ -1,9 +1,9 @@
 import { Home } from '../../components'
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen() {
     return (
         <>
-            <Home navigation={navigation} />
+            <Home />
         </>
     )
 }

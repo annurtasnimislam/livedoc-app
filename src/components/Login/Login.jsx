@@ -30,7 +30,7 @@ export default function Login() {
                 <Text style={tw`${styles.forgot}`}>Forgot Passowrd</Text>
             </View>
             {/* remember & forget */}
-            <LargeButton text="Sign In" mt="16" />
+            <LargeButton text="Sign In" mt="16" onPress={() => navigation.navigate('home')} />
 
             <Text style={tw`${styles.account}`}>
                 don’t Have an account?{' '}

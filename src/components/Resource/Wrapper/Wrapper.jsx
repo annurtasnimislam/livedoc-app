@@ -6,7 +6,7 @@ export default function Wrapper({ children, statusBar, onScroll, mb }) {
     return (
         <>
             <StatusBar
-                backgroundColor={statusBar === 'light' ? '#419cd9' : '#fff'}
+                backgroundColor={statusBar === 'light' ? '#076B62' : '#fff'}
                 style={statusBar === 'light' ? 'light' : 'dark'}
             />
             <KeyboardAvoidingView style={tw`flex-1`}>
