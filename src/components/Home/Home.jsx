@@ -1,8 +1,13 @@
+import { Text } from 'react-native'
 import tw from '../../library/tailwind'
-import { Wrapper } from '../Resource'
+import { Layout, Wrapper } from '../Resource'
 
 export default function Home() {
-    return <Wrapper statusBar="light"></Wrapper>
+    return (
+        <Layout>
+            <Wrapper statusBar="light"></Wrapper>
+        </Layout>
+    )
 }
 
 const styles = {
